@@ -13,13 +13,45 @@ from datetime import datetime, timezone
 
 # Hardcoded filters (adjust later to pass in with arguments)
 START_DT = datetime(2025, 7, 4, 0, 0, 0, tzinfo=timezone.utc)
-END_DT = datetime(2025, 7, 11, 23, 59, 59, tzinfo=timezone.utc)
+END_DT = datetime(2025, 7, 9, 23, 59, 59, tzinfo=timezone.utc)
 SEARCH_TERMS = [
-    "texas flood",
-    "tx flood",
+    # General flood mentions
+    "texas flash flood",
+    "tx flash flood",
+    "texas flooding",
+    "flash floods texas",
+    "flooding in texas",
+    "severe flooding texas",
+
+    # City-specific and regional
     "houston flood",
-    "flash flood",
-    "rain damage"
+    "austin flood",
+    "dallas flood",
+    "san antonio flood",
+    "central texas flood",
+    "east texas flood",
+    "hill country flood",
+
+    # Time and event context
+    "fourth of july flood",
+    "july 4 flood texas",
+    "holiday weekend flood texas",
+    "july storms texas",
+
+    # Meteorological terms
+    "heavy rain texas",
+    "record rainfall texas",
+    "storm damage texas",
+    "rain damage texas",
+    "flash flood warning texas",
+    "flood watch texas",
+
+    # Infrastructure & aftermath
+    "road closures texas flood",
+    "power outage texas flood",
+    "rescue texas flood",
+    "property damage texas flood",
+    "flood recovery texas",
 ]
 SEARCH_TERMS_LC = [t.lower() for t in SEARCH_TERMS]
 
@@ -42,7 +74,7 @@ def match_term(row: dict) -> str | None:
     return None
 
 # Change this path to the file or folder you want to process
-fileOrFolderPath = r"E:/RedditDownloads/reddit/submissions/RS_2025-07.zst" 
+fileOrFolderPath = r"C:/Users/bh3396/Downloads/RS_2025-07.zst" 
 recursive = False
 
 def processFile(path: str):
